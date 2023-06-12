@@ -1,4 +1,5 @@
 import Link from 'next/link';
+
 import { fetchReceipts } from '../../service/receipts.service';
 
 async function getData() {

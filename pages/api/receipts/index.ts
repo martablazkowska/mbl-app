@@ -1,20 +1,21 @@
-import clientPromise from "../../../lib/mongodb";
-import {NextApiRequest, NextApiResponse} from "next";
+import { NextApiRequest, NextApiResponse } from 'next';
 
-export default async (req: NextApiRequest, res:NextApiResponse) => {
-    try {
-        const client = await clientPromise;
-        const db = client.db(process.env.MONGODB_BASE);
+import clientPromise from '../../../lib/mongodb';
 
-        const movies = await db
-            .collection("receipts")
-            .find({})
-            .sort({ name: -1 })
-            .limit(20)
-            .toArray();
+export default async (req: NextApiRequest, res: NextApiResponse) => {
+  try {
+    const client = await clientPromise;
+    const db = client.db(process.env.MONGODB_BASE);
 
-        res.json(movies);
-    } catch (e) {
-        console.error(e);
-    }
+    const movies = await db
+      .collection('receipts')
+      .find({})
+      .sort({ name: -1 })
+      .limit(20)
+      .toArray();
+
+    res.json(movies);
+  } catch (e) {
+    console.error(e);
+  }
 };
