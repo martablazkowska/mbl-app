@@ -6,7 +6,10 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
 import { classNames } from '@/helpers/styles';
 
-const navigation = [{ name: 'Przepisy', href: '/receipts', current: false }];
+const navigation = [
+  { name: 'Receipts', href: '/receipts', current: false },
+  { name: 'Sign in', href: '/register', current: false },
+];
 
 const Header = () => {
   return (

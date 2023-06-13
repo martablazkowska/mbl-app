@@ -4,7 +4,7 @@ import type { Metadata } from 'next';
 import Header from '@/components/common/Header/Header';
 
 // These styles apply to every route in the application
-import './globals.css';
+import '../globals.css';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -16,6 +16,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en">
       <body>
         <Header />
+        <div>Auth</div>
         <div>{children}</div>
       </body>
     </html>
