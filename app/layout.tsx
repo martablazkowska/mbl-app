@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import type { Metadata } from 'next';
 
-import Header from '../components/common/Header/Header';
+import Header from '@/components/common/Header/Header';
 
 // These styles apply to every route in the application
 import './globals.css';

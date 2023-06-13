@@ -4,11 +4,9 @@ import { Disclosure } from '@headlessui/react';
 import Link from 'next/link';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
-const navigation = [{ name: 'Przepisy', href: '/receipts', current: false }];
+import { classNames } from '@/helpers/styles';
 
-function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(' ');
-}
+const navigation = [{ name: 'Przepisy', href: '/receipts', current: false }];
 
 const Header = () => {
   return (
@@ -37,11 +35,7 @@ const Header = () => {
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
                   <Link href="/">
-                    <img
-                      className="h-8 w-auto"
-                      src="/logo.svg"
-                      alt="Your Company"
-                    />
+                    <img className="h-8 w-auto" src="/logo.svg" alt="MBL" />
                   </Link>
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
@@ -70,9 +64,8 @@ const Header = () => {
           <Disclosure.Panel className="sm:hidden">
             <div className="space-y-1 px-2 pb-3 pt-2">
               {navigation.map((item) => (
-                <Disclosure.Button
+                <Link
                   key={item.name}
-                  as="a"
                   href={item.href}
                   className={classNames(
                     item.current
@@ -83,7 +76,7 @@ const Header = () => {
                   aria-current={item.current ? 'page' : undefined}
                 >
                   {item.name}
-                </Disclosure.Button>
+                </Link>
               ))}
             </div>
           </Disclosure.Panel>

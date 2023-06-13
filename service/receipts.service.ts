@@ -14,8 +14,6 @@ export const fetchReceiptById = async (id: string) => {
   const res = await fetch(`${SERVER}/api/receipts/${id}`);
 
   if (!res.ok) {
-
-
     throw new Error('Failed to fetch data');
   }
 
