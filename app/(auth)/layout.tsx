@@ -16,7 +16,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en">
       <body>
         <Header />
-        <div>Auth</div>
         <div>{children}</div>
       </body>
     </html>
