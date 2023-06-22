@@ -1,13 +1,11 @@
 'use client';
+
 import { ReactNode } from 'react';
-import type { Metadata } from 'next';
 import { SessionProvider } from 'next-auth/react';
 
 import Header from '@/components/common/Header/Header';
 
-// These styles apply to every route in the application
 import '../globals.css';
-import LoginBtn from '@/components/rest/LoginBtn/LoginBtn';
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (

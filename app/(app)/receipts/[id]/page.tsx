@@ -6,8 +6,6 @@ import {
 const ReceiptPage = async ({ params }: any) => {
   const data = await fetchReceiptById(params.id);
 
-  console.log(data);
-
   return <h2>Receipt: {data.name}</h2>;
 };
 

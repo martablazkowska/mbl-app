@@ -8,7 +8,7 @@ const schema = z.object({
   id: z.string().min(1),
 });
 
-export const GET = async (req: Request, context) => {
+export const GET = async (req: Request, context: { params: any }) => {
   try {
     const client = await clientPromise;
     const db = client.db(process.env.MONGODB_BASE);
