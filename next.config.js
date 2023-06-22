@@ -4,8 +4,8 @@ const nextConfig = {
     styledComponents: true,
   },
   experimental: {
-    // appDir: true,
-    serverComponentsExternalPackages: ['bcrypt'],
+    appDir: true,
+    // serverComponentsExternalPackages: ['bcrypt'],
   },
   reactStrictMode: true,
 };

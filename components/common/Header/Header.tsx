@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
 import { classNames } from '@/helpers/styles';
+import LoginBtn from '@/components/rest/LoginBtn/LoginBtn';
 
 const navigation = [
   { name: 'Receipts', href: '/receipts', current: false },
@@ -60,6 +61,9 @@ const Header = () => {
                     ))}
                   </div>
                 </div>
+              </div>
+              <div>
+                <LoginBtn />
               </div>
             </div>
           </div>

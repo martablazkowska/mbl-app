@@ -7,7 +7,7 @@ import Input from '@/components/common/Form/Input';
 import { register } from '../../../service/auth.service';
 
 interface IRegisterFormProps {
-  onSuccess?: () => void;
+  onSuccess?: (res) => void;
   onError?: () => void;
 }
 
@@ -29,11 +29,9 @@ const RegisterForm = ({ onSuccess, onError }: IRegisterFormProps) => {
 
     register(formState)
       .then((res) => {
-        console.log(res);
-        onSuccess && onSuccess();
+        onSuccess && onSuccess(res);
       })
       .catch((err) => {
-        console.log(err);
         onError && onError();
       });
   };

@@ -2,8 +2,8 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import { serialize } from 'cookie';
 import z from 'zod';
 
-import clientPromise from '../../lib/mongodb';
-import { createJWT, comparePassword } from '../../lib/auth';
+import clientPromise from '../../../lib/mongodb';
+import { createJWT, comparePassword } from '../../../lib/auth';
 
 const schema = z.object({
   email: z.string().email(),
