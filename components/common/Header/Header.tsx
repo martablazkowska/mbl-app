@@ -7,10 +7,7 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { classNames } from '@/helpers/styles';
 import LoginBtn from '@/components/rest/LoginBtn/LoginBtn';
 
-const navigation = [
-  { name: 'Receipts', href: '/receipts', current: false },
-  { name: 'Sign in', href: '/register', current: false },
-];
+const navigation = [{ name: 'Receipts', href: '/receipts', current: false }];
 
 const Header = () => {
   return (

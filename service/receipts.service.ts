@@ -19,3 +19,18 @@ export const fetchReceiptById = async (id: string) => {
 
   return res.json();
 };
+
+export const postReceipt = async (receipt: any) => {
+  console.log(receipt);
+
+  const res = await fetch(`${SERVER}/api/receipts`, {
+    method: 'POST',
+    body: JSON.stringify(receipt),
+  });
+
+  if (!res.ok) {
+    throw new Error('Failed to fetch data');
+  }
+
+  return res.json();
+};

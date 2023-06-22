@@ -20,3 +20,18 @@ export const GET = async (req: Request, res: Response) => {
     return NextResponse.json({ message: 'Error', err });
   }
 };
+
+export const POST = async (req: Request, res: Response) => {
+  try {
+    const client = await clientPromise;
+    const db = client.db(process.env.MONGODB_BASE);
+
+    const data = await req.json();
+
+    await db.collection('receipts').insertOne(data);
+
+    return NextResponse.json({ message: 'ok' });
+  } catch (err) {
+    return NextResponse.json({ message: 'Error', err });
+  }
+};

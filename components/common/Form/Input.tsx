@@ -1,27 +1,15 @@
-import { ChangeEvent } from 'react';
+import { UseFormReturn } from 'react-hook-form';
+
+import { IFormElement } from '@/components/common/Form/Form.interface';
 
 interface IInputProps {
-  id: string;
-  name: string;
-  label?: string;
-  value: string;
-  type: string;
-  required: boolean;
-  onChange?: (name: string, val: string) => void;
+  field: IFormElement;
+  hookForm: UseFormReturn;
 }
 
-const Input = ({
-  id,
-  name,
-  label,
-  value,
-  type,
-  required,
-  onChange,
-}: IInputProps) => {
-  const handleValueChange = (e: ChangeEvent<HTMLInputElement>) => {
-    onChange && onChange(e.target.name, e.target.value);
-  };
+const Input = ({ field, hookForm }: IInputProps) => {
+  const { register } = hookForm;
+  const { id, label } = field;
 
   return (
     <div>
@@ -35,14 +23,10 @@ const Input = ({
       )}
       <div className="mt-2">
         <input
-          id={id}
-          name={name}
-          type={type}
-          value={value}
-          autoComplete="email"
-          required={required}
-          className="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-teal-600 sm:text-sm sm:leading-6"
-          onChange={handleValueChange}
+          id={field.id}
+          required={field?.required || false}
+          {...register(field.id, { ...field })}
+          className="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
         />
       </div>
     </div>
